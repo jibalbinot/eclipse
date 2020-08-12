@@ -18,7 +18,7 @@ public class Conta {
 	String agencia;
 	String titular;
 	double saldo;
-	String dataDeAbertura;
+	Data dataDeAbertura;
 
 	boolean saca(double valor) {
 		if (valor <= this.saldo) {
@@ -43,7 +43,9 @@ public class Conta {
 		dados += "Agência....: " + this.agencia + "\n";
 		dados += "Número.....: " + this.numero + "\n";
 		dados += "Titular....: " + this.titular + "\n";
-		dados += "Data abert.: " + this.dataDeAbertura + "\n";
+		dados += "Data abert.: " + this.dataDeAbertura.dia + "/" 
+								 + this.dataDeAbertura.mes + "/"
+								 + this.dataDeAbertura.ano + "\n";
 		dados += "Saldo......: " + this.saldo + "\n";
 		dados += "Rendimento.: " + this.calculaRendimento() + "\n";
 
