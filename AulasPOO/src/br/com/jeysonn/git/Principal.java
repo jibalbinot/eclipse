@@ -25,10 +25,7 @@ public class Principal {
 
         c1.deposita(100.0);
         
-        System.out.println(c1.recuperaDadosParaImpressao());
-        
-        System.out.println("saldo atual:" + c1.saldo);
-        System.out.println("rendimento mensal:" + c1.calculaRendimento());	
+        System.out.println(c1.recuperaDadosParaImpressao());      	
 
 	}
 
