@@ -43,9 +43,7 @@ public class Conta {
 		dados += "Agência....: " + this.agencia + "\n";
 		dados += "Número.....: " + this.numero + "\n";
 		dados += "Titular....: " + this.titular + "\n";
-		dados += "Data abert.: " + this.dataDeAbertura.dia + "/" 
-								 + this.dataDeAbertura.mes + "/"
-								 + this.dataDeAbertura.ano + "\n";
+		dados += "Data abert.: " + this.dataDeAbertura.formatada()+ "\n";
 		dados += "Saldo......: " + this.saldo + "\n";
 		dados += "Rendimento.: " + this.calculaRendimento() + "\n";
 
