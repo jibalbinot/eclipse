@@ -15,6 +15,7 @@ public class Principal {
 	public static void main(String[] args) {
 		System.out.println("Alo Brasil!");
 		System.out.println("Aqui tem educação!");
+		
 
 	}
 
