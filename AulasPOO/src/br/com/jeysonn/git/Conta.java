@@ -16,11 +16,21 @@ package br.com.jeysonn.git;
 public class Conta {
 	int numero;
 	String agencia;
-	String titular;
-	double saldo;
-	Data dataDeAbertura;
+	Cliente titular;
+	private double saldo = 0;
+	Data dataDeAbertura = new Data();
 
-	boolean saca(double valor) {
+	public boolean transfere(double valor, Conta destino) {
+		if (valor <= this.saldo) {
+			this.saldo -= valor;
+			destino.saldo += valor;
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean saca(double valor) {
 		if (valor <= this.saldo) {
 			this.saldo -= valor;
 			return true;
@@ -29,15 +39,15 @@ public class Conta {
 		}
 	}
 
-	void deposita(double valor) {
+	public void deposita(double valor) {
 		this.saldo += valor;
 	}
 
-	double calculaRendimento() {
+	public double calculaRendimento() {
 		return this.saldo * 0.1;
 	}
 
-	String recuperaDadosParaImpressao() {
+	public String recuperaDadosParaImpressao() {
 		String dados = "";
 
 		dados += "Agência....: " + this.agencia + "\n";
@@ -49,5 +59,5 @@ public class Conta {
 
 		return dados;
 	}
-
+	
 }

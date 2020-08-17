@@ -8,4 +8,9 @@ public class Data {
 	String formatada() {
 		return this.dia + "/" + this.mes + "/" + this.ano;
 	}
+	
+	//overloading - sobrecarga
+	String formatada(int x) {
+		return this.mes + "/" + this.dia + "/" + this.ano;
+	}
 }
