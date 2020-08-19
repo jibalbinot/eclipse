@@ -92,7 +92,7 @@ public class Conta {
 
 		dados += "Agência....: " + this.agencia + "\n";
 		dados += "Número.....: " + this.numero + "\n";
-		dados += "Titular....: " + this.titular + "\n";
+		dados += "Titular      " + "\n"+this.titular.toString() + "\n";
 		dados += "Data abert.: " + this.dataDeAbertura.formatada()+ "\n";
 		dados += "Saldo......: " + this.getSaldo() + "\n";
 		dados += "Rendimento.: " + this.calculaRendimento() + "\n";

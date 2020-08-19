@@ -14,13 +14,15 @@ public class Principal {
 	 */
 	public static void main(String[] args) {
 		Conta c1 = new Conta();
-
         //c1.titular = "Hugo";
 		Cliente cli1 = new Cliente();
 		//cli1.nome = "Hugo";um atributo private não pode ser alterado diretamente
 		cli1.setNome("Hugo");//atribui um valor para nome
-		System.out.println("Nome: "+cli1.getNome());//le o atributo nome
-		
+		cli1.setCpf("123.456.789-10");
+		cli1.setEndereco("Marechal Deodoro, 1000");
+		cli1.setIdade(30);
+		c1.setTitular(cli1);//ligação da Conta c1 com o Cliente cli1
+				
         //c1.numero = 123;
 		c1.setNumero(123);
         //c1.agencia = "45678-9";
@@ -50,6 +52,12 @@ public class Principal {
         c2.getDataDeAbertura().setMes(8);
         c2.getDataDeAbertura().setAno(2020);
         
+        c2.setTitular(new Cliente());
+        c2.getTitular().setNome("Ze Maria");
+        c2.getTitular().setEndereco("XV de Novembro, 999");
+        c2.getTitular().setCpf("987.654.321-10");
+        c2.getTitular().setIdade(25);
+                
         System.out.println(c2.recuperaDadosParaImpressao());
         
         if(c1.transfere(70, c2)) {
