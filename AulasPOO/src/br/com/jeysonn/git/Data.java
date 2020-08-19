@@ -1,15 +1,39 @@
 package br.com.jeysonn.git;
 
 public class Data {
-	int dia;
-	int mes;
-	int ano;
+	private int dia;
+	private int mes;
+	private int ano;
+
+	public int getDia() {
+		return this.dia;
+	}
+
+	public void setDia(int dia) {
+		this.dia = dia;
+	}
+
+	public int getMes() {
+		return mes;
+	}
+
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
 
 	String formatada() {
 		return this.dia + "/" + this.mes + "/" + this.ano;
 	}
-	
-	//overloading - sobrecarga
+
+	// overloading - sobrecarga
 	String formatada(int x) {
 		return this.mes + "/" + this.dia + "/" + this.ano;
 	}

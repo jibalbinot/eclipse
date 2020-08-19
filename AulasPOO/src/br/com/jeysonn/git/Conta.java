@@ -14,16 +14,56 @@ package br.com.jeysonn.git;
  */
 
 public class Conta {
-	int numero;
-	String agencia;
-	Cliente titular;
+	private int numero;
+	private String agencia;
+	private Cliente titular;
 	private double saldo = 0;
-	Data dataDeAbertura = new Data();
+	private Data dataDeAbertura = new Data();
 
+	public int getNumero() {
+		return this.numero;
+	}
+	
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	public String getAgencia() {
+		return this.agencia;
+	}
+	
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
+	}
+	
+	public Cliente getTitular() {
+		return this.titular;
+	}
+	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+
+	private void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
+	public Data getDataDeAbertura() {
+		return this.dataDeAbertura;
+	}
+	
+	public void setDataDeAbertura(Data dataDeAbertura) {
+		this.dataDeAbertura = dataDeAbertura;
+	}
+	
 	public boolean transfere(double valor, Conta destino) {
-		if (valor <= this.saldo) {
-			this.saldo -= valor;
-			destino.saldo += valor;
+		if (valor <= this.getSaldo()) {
+			this.setSaldo(this.getSaldo() - valor);
+			destino.setSaldo(destino.getSaldo() + valor);
 			return true;
 		} else {
 			return false;
@@ -31,8 +71,8 @@ public class Conta {
 	}
 	
 	public boolean saca(double valor) {
-		if (valor <= this.saldo) {
-			this.saldo -= valor;
+		if (valor <= this.getSaldo()) {
+			this.setSaldo(this.getSaldo() - valor);
 			return true;
 		} else {
 			return false;
@@ -40,11 +80,11 @@ public class Conta {
 	}
 
 	public void deposita(double valor) {
-		this.saldo += valor;
+		this.setSaldo(this.getSaldo() + valor);
 	}
 
 	public double calculaRendimento() {
-		return this.saldo * 0.1;
+		return this.getSaldo() * 0.1;
 	}
 
 	public String recuperaDadosParaImpressao() {
@@ -54,7 +94,7 @@ public class Conta {
 		dados += "Número.....: " + this.numero + "\n";
 		dados += "Titular....: " + this.titular + "\n";
 		dados += "Data abert.: " + this.dataDeAbertura.formatada()+ "\n";
-		dados += "Saldo......: " + this.saldo + "\n";
+		dados += "Saldo......: " + this.getSaldo() + "\n";
 		dados += "Rendimento.: " + this.calculaRendimento() + "\n";
 
 		return dados;
