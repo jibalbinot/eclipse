@@ -13,9 +13,12 @@ public class Principal {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Conta c1 = new Conta();
+		Conta c1 = new Conta(123);
         //c1.titular = "Hugo";
 		Cliente cli1 = new Cliente();
+		
+		//Cliente cli1 = new Cliente("Hugo","123.456.789-10","Marechal Deodoro, 1000",30);
+		
 		//cli1.nome = "Hugo";um atributo private não pode ser alterado diretamente
 		cli1.setNome("Hugo");//atribui um valor para nome
 		cli1.setCpf("123.456.789-10");
@@ -34,7 +37,7 @@ public class Principal {
 		c1.getDataDeAbertura().setDia(12);
         c1.getDataDeAbertura().setMes(8);
         c1.getDataDeAbertura().setAno(2020);
-                
+              
         System.out.println(c1.recuperaDadosParaImpressao());
 
         c1.deposita(100.0);
@@ -42,7 +45,7 @@ public class Principal {
         System.out.println("Antes");
         System.out.println(c1.recuperaDadosParaImpressao());
         
-        Conta c2 = new Conta();
+        Conta c2 = new Conta(456,"45678-9");
         //c2.titular = "Alberto";
         c2.setNumero(456);
         c2.setAgencia("45678-9");

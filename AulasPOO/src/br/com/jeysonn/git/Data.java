@@ -34,7 +34,7 @@ public class Data {
 	}
 
 	// overloading - sobrecarga
-	String formatada(int x) {
+	String formatada(int a) {
 		return this.mes + "/" + this.dia + "/" + this.ano;
 	}
 }
