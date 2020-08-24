@@ -16,7 +16,7 @@ public class Principal {
 		
 		System.out.println("Total: "+Conta.getTotalDeContas());
 		
-		Conta c1 = new Conta(123, "45678-9", 0);
+		Conta c1 = new Conta("45678-9", 0);
         //c1.titular = "Hugo";
 		
 		System.out.println("Total c1: "+c1.getTotalDeContas());
@@ -32,7 +32,7 @@ public class Principal {
 		c1.setTitular(cli1);//ligação da Conta c1 com o Cliente cli1
 				
         //c1.numero = 123;
-		c1.setNumero(123);
+		//c1.setNumero(123);//gerado automaticamente
         //c1.agencia = "45678-9";
 		c1.setAgencia("45678-9");
         //c1.saldo = 50.0; um atributo private não pode ser alterado diretamente
@@ -50,13 +50,13 @@ public class Principal {
         System.out.println("Antes");
         System.out.println(c1.recuperaDadosParaImpressao());
         
-        Conta c2 = new Conta(456,"45678-9");
+        Conta c2 = new Conta("45678-9");
         
         System.out.println("Total: "+Conta.getTotalDeContas());
         System.out.println("Total c1: "+c1.getTotalDeContas());
         
         //c2.titular = "Alberto";
-        c2.setNumero(456);
+        //c2.setNumero(456);
         c2.setAgencia("45678-9");
         
         //c2.dataDeAbertura.dia = 17;
@@ -77,10 +77,15 @@ public class Principal {
         } else {
         	System.out.println("Operação não autorizada");
         }
+
+        Conta c3 = new Conta(cli1);
+        c3.setAgencia("45678-9");
         
+        System.out.println();
         System.out.println("Depois");
         System.out.println(c1.recuperaDadosParaImpressao());
-        System.out.println(c2.recuperaDadosParaImpressao());   
+        System.out.println(c2.recuperaDadosParaImpressao());
+        System.out.println(c3.recuperaDadosParaImpressao());
 
 	}
 
