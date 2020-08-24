@@ -13,8 +13,14 @@ public class Principal {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		System.out.println("Total: "+Conta.getTotalDeContas());
+		
 		Conta c1 = new Conta(123, "45678-9", 0);
         //c1.titular = "Hugo";
+		
+		System.out.println("Total c1: "+c1.getTotalDeContas());
+		System.out.println("Total: "+Conta.getTotalDeContas());
 		
 		Cliente cli1 = new Cliente("Hugo","123.456.789-10","Marechal Deodoro, 1000",30);
 		
@@ -45,6 +51,10 @@ public class Principal {
         System.out.println(c1.recuperaDadosParaImpressao());
         
         Conta c2 = new Conta(456,"45678-9");
+        
+        System.out.println("Total: "+Conta.getTotalDeContas());
+        System.out.println("Total c1: "+c1.getTotalDeContas());
+        
         //c2.titular = "Alberto";
         c2.setNumero(456);
         c2.setAgencia("45678-9");

@@ -14,32 +14,48 @@ package br.com.jeysonn.git;
  */
 
 public class Conta {
+	//atributos de objeto
 	private int numero;
 	private String agencia;
 	private Cliente titular;
 	private double saldo = 0;
 	private Data dataDeAbertura = new Data();
 	
+	//atributo de classe (static) região compartilhada por todos os objetos do tipo Conta
+	static private int totalDeContas = 0;
+	
+	//metodo static para recurperar/ler o atributo de classe
+	public static int getTotalDeContas() {
+		return totalDeContas;
+	}
+
 	//construtores
 	public Conta(){
+		Conta.totalDeContas++;//atributo de classe
 		System.out.println("1 executou o construtor sem argumento");
 	}
 	
 	public Conta(int numero){
-		System.out.println("2 executou o construtor com argumento numero");
+		this();
 		this.numero = numero;
+		System.out.println("2 executou o construtor com argumento numero");
+	}
+	
+	public Conta(Cliente titular) {
+		this();
+		this.titular = titular;
 	}
 	
 	public Conta(int numero, String agencia){
 		this(numero);//é possível um construtor chamar outro desde que seja o primeiro comando
-		System.out.println("3 executou o construtor com argumento numero e agencia");
 		this.agencia = agencia;
+		System.out.println("3 executou o construtor com argumento numero e agencia");		
 	}
 	
 	public Conta(int numero, String agencia, double saldo){
-		this.numero = numero;
-		this.agencia = agencia;
+		this(numero, agencia);
 		this.saldo = saldo;
+		System.out.println("4 executou o construtor com argumento numero, agencia e saldo");
 	}
 
 	public int getNumero() {
@@ -105,7 +121,7 @@ public class Conta {
 		this.setSaldo(this.getSaldo() + valor);
 	}
 
-	public double calculaRendimento() {
+	public double getRendimento() {
 		return this.getSaldo() * 0.1;
 	}
 
@@ -117,7 +133,7 @@ public class Conta {
 		dados += "Titular      " + "\n"+this.titular.toString() + "\n";
 		dados += "Data abert.: " + this.dataDeAbertura.formatada()+ "\n";
 		dados += "Saldo......: " + this.getSaldo() + "\n";
-		dados += "Rendimento.: " + this.calculaRendimento() + "\n";
+		dados += "Rendimento.: " + this.getRendimento() + "\n";
 
 		return dados;
 	}
