@@ -13,11 +13,10 @@ public class Principal {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Conta c1 = new Conta(123);
+		Conta c1 = new Conta(123, "45678-9", 0);
         //c1.titular = "Hugo";
-		Cliente cli1 = new Cliente();
 		
-		//Cliente cli1 = new Cliente("Hugo","123.456.789-10","Marechal Deodoro, 1000",30);
+		Cliente cli1 = new Cliente("Hugo","123.456.789-10","Marechal Deodoro, 1000",30);
 		
 		//cli1.nome = "Hugo";um atributo private não pode ser alterado diretamente
 		cli1.setNome("Hugo");//atribui um valor para nome
@@ -51,9 +50,9 @@ public class Principal {
         c2.setAgencia("45678-9");
         
         //c2.dataDeAbertura.dia = 17;
-        c2.getDataDeAbertura().setDia(19);
-        c2.getDataDeAbertura().setMes(8);
-        c2.getDataDeAbertura().setAno(2020);
+        //c2.getDataDeAbertura().setDia(19);
+        //c2.getDataDeAbertura().setMes(8);
+        //c2.getDataDeAbertura().setAno(2020);
         
         c2.setTitular(new Cliente());
         c2.getTitular().setNome("Ze Maria");

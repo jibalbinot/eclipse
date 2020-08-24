@@ -21,19 +21,25 @@ public class Conta {
 	private Data dataDeAbertura = new Data();
 	
 	//construtores
-	Conta(){
+	public Conta(){
 		System.out.println("1 executou o construtor sem argumento");
 	}
 	
-	Conta(int numero){
+	public Conta(int numero){
 		System.out.println("2 executou o construtor com argumento numero");
 		this.numero = numero;
 	}
 	
-	Conta(int numero, String agencia){
+	public Conta(int numero, String agencia){
 		this(numero);//é possível um construtor chamar outro desde que seja o primeiro comando
 		System.out.println("3 executou o construtor com argumento numero e agencia");
 		this.agencia = agencia;
+	}
+	
+	public Conta(int numero, String agencia, double saldo){
+		this.numero = numero;
+		this.agencia = agencia;
+		this.saldo = saldo;
 	}
 
 	public int getNumero() {

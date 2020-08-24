@@ -1,9 +1,25 @@
 package br.com.jeysonn.git;
 
+import java.time.LocalDate;
+
 public class Data {
 	private int dia;
 	private int mes;
 	private int ano;
+
+	public Data() {
+		//pega a data atual do sistema
+		LocalDate localDate = LocalDate.now();
+		this.dia = localDate.getDayOfMonth();
+		this.mes = localDate.getMonthValue();
+		this.ano = localDate.getYear();
+	}
+
+	public Data(int dia, int mes, int ano) {
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
+	}
 
 	public int getDia() {
 		return this.dia;

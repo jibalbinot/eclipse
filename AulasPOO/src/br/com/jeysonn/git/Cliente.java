@@ -6,6 +6,17 @@ public class Cliente {
 	private String cpf;
 	private int idade;
 
+	public Cliente() {
+		
+	}
+	
+	public Cliente(String nome, String endereco, String cpf, int idade){
+		this.nome = nome;
+		this.endereco = endereco;
+		this.cpf = cpf;
+		this.idade = idade;
+	}
+	
 	public void setNome(String nome) {
 		this.nome = nome.toUpperCase();// transforma em maiusculas
 	}
