@@ -2,6 +2,13 @@ package br.com.jeysonn.git;
 
 import java.time.LocalDate;
 
+/**
+ * Classe responsável por representar e manipular a datas
+ *
+ * @author Jeysonn Isaac Balbinot
+ * @version 1
+ * 
+ */
 public class Data {
 	private int dia;
 	private int mes;
@@ -45,12 +52,22 @@ public class Data {
 		this.ano = ano;
 	}
 
-	String formatada() {
+	 /**
+     * Metodo que retorna a data no formato String usando a sequência dia/mes/ano
+     * @return String
+     */
+	public String formatada() {
 		return this.dia + "/" + this.mes + "/" + this.ano;
 	}
 
+	
+	/**
+     * Metodo que retorna a data no formato String usando a sequência mes/dia/ano
+     * @param a um numero qualquer
+     * @return String
+     */
 	// overloading - sobrecarga
-	String formatada(int a) {
+	public String formatada(int a) {
 		return this.mes + "/" + this.dia + "/" + this.ano;
 	}
 }

@@ -1,5 +1,13 @@
 package br.com.jeysonn.git;
 
+/**
+ * Classe responsável por moldar as Clientes do Banco
+ *
+ * @author Jeysonn Isaac Balbinot
+ * @version 1
+ * 
+ */
+
 public class Cliente {
 	private String nome;
 	private String endereco;

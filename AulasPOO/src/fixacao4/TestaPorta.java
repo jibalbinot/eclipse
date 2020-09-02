@@ -1,8 +1,13 @@
 package fixacao4;
 
+import br.com.jeysonn.git.Data;
+
 public class TestaPorta {
 
 	public static void main(String[] args) {
+		
+		Data data = new Data();
+		
 		Porta p = new Porta();
 		p.abre();
 		p.fecha();

@@ -1,6 +1,6 @@
 package br.com.jeysonn.git;
 
-/*
+/* Comentário de bloco
  * Ela deve ter o nome do titular (String)
  * o número (int)
  * a agência (String)
@@ -13,6 +13,14 @@ package br.com.jeysonn.git;
  * método recuperaDadosParaImpressao(), que não recebe parâmetro mas devolve o texto com todas as informações da nossa conta para efetuarmos a impressão.
  */
 
+
+/** Comentário de documentação
+ * Classe responsável por moldar as Contas do Banco
+ *
+ * @author Jeysonn Isaac Balbinot
+ * @version 1
+ * 
+ */
 public class Conta {
 	//atributos de objeto
 	private int numero;
