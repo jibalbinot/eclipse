@@ -53,8 +53,18 @@ public class Funcionario {
 		dados += "Nome...: " + this.getNome() + "\n";
 		dados += "CPF....: " + this.getCpf() + "\n";
 		dados += "Salário: " + this.getSalario() + "\n";
+		dados += "Bonific: " + this.getBonificacao() + "\n";
+		dados += "Vencim.: " + this.getVencimento() + "\n";
 		return dados;
 	}
+	
+	public double getVencimento() {
+		return this.getSalario() + this.getBonificacao();
+	}
+	
+	public double getBonificacao() {
+        return this.getSalario() * 0.10;
+    }
 
 	
 }

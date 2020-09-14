@@ -16,14 +16,14 @@ public class Principal2 {
 		Funcionario f = new Funcionario();
 		f.setNome("Jeysonn");
 		f.setCpf("12345678910");
-		f.setSalario(1500);
-		System.out.println(f);
+		f.setSalario(1000);
+		System.out.println(f.toString());
 
 		Gerente g = new Gerente();
 		g.setNome("Evandro");
 		g.setCpf("11122233344");
-		g.setSalario(2500);
-		System.out.println(g);
+		g.setSalario(1000);
+		System.out.println(g.toString());
 		g.autentica(1234);
 
 	}
