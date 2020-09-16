@@ -25,6 +25,11 @@ public class Principal2 {
 		g.setSalario(1000);
 		System.out.println(g.toString());
 		g.autentica(1234);
+		
+		ControleBonificacoes controle = new ControleBonificacoes();
+		controle.registra(f);
+		controle.registra(g);
+		System.out.println(controle.getTotalDeBonificacoes());
 
 	}
 

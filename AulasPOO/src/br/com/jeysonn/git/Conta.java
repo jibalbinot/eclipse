@@ -15,13 +15,19 @@ package br.com.jeysonn.git;
 
 
 /** Comentário de documentação
- * Classe responsável por moldar as Contas do Banco
+ * Classe abstrata que servirá de modelo
+ * para a criação de subclasses (classes filhas)
+ * como por exemplo, ContaPoupanca e ContaCorrente
+ * 
+ * Classe abstrata não pode ser instanciada, ou seja,
+ * não permite a criação de objetos, ou seja, serve
+ * apenas de modelo para outras classes
  *
  * @author Jeysonn Isaac Balbinot
  * @version 1
  * 
  */
-public class Conta {
+public abstract class Conta {
 	//atributos de objeto
 	private int numero;
 	private String agencia;
@@ -61,6 +67,10 @@ public class Conta {
 		System.out.println("4 executou o construtor com argumento numero, agencia e saldo");
 	}
 
+	public String getTipo() {
+		return "Conta";
+	}
+	
 	public int getNumero() {
 		return this.numero;
 	}
@@ -131,14 +141,18 @@ public class Conta {
 		this.setSaldo(this.getSaldo() + valor);
 	}
 
-	public double getRendimento() {
-		return this.getSaldo() * 0.1;
-	}
+	/**
+	 * método abstrato, não possui corpo (código), possui apenas a assinatura
+	 * ele servirá de modelo para as classes filhas, ou seja, é a classe filha
+	 * concreta que deverá implementar seu funcionamento
+	 */
+	public abstract double getRendimento();
 
 	public String recuperaDadosParaImpressao() {
 		String dados = "";
 
 		dados += "Agência....: " + this.agencia + "\n";
+		dados += "Tipo.......: " + this.getTipo() + "\n";
 		dados += "Número.....: " + this.numero + "\n";
 		dados += "Titular      " + "\n"+this.titular.toString() + "\n";
 		dados += "Data abert.: " + this.dataDeAbertura.formatada()+ "\n";

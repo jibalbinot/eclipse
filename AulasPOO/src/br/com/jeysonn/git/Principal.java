@@ -16,7 +16,7 @@ public class Principal {
 		
 		System.out.println("Total: "+Conta.getTotalDeContas());
 		
-		Conta c1 = new Conta("45678-9", 0);
+		Conta c1 = new ContaCorrente("45678-9");
         //c1.titular = "Hugo";
 		
 		System.out.println("Total c1: "+c1.getTotalDeContas());
@@ -50,7 +50,7 @@ public class Principal {
         System.out.println("Antes");
         System.out.println(c1.recuperaDadosParaImpressao());
         
-        Conta c2 = new Conta("45678-9");
+        Conta c2 = new ContaCorrente("45678-9");
         
         System.out.println("Total: "+Conta.getTotalDeContas());
         System.out.println("Total c1: "+c1.getTotalDeContas());
@@ -78,7 +78,7 @@ public class Principal {
         	System.out.println("Operação não autorizada");
         }
 
-        Conta c3 = new Conta(cli1);
+        Conta c3 = new ContaCorrente(cli1);
         c3.setAgencia("45678-9");
         
         System.out.println();
