@@ -47,7 +47,7 @@ public abstract class Conta {
 	public Conta(){
 		Conta.totalDeContas++;//atributo de classe
 		this.numero = Conta.totalDeContas;
-		System.out.println("1 executou o construtor sem argumento");
+		//System.out.println("1 executou o construtor sem argumento");
 	}
 	
 	public Conta(Cliente titular) {
@@ -58,13 +58,13 @@ public abstract class Conta {
 	public Conta(String agencia){
 		this();//é possível um construtor chamar outro desde que seja o primeiro comando
 		this.agencia = agencia;
-		System.out.println("3 executou o construtor com argumento numero e agencia");		
+		//System.out.println("3 executou o construtor com argumento numero e agencia");		
 	}
 	
 	public Conta(String agencia, double saldo){
 		this(agencia);
 		this.saldo = saldo;
-		System.out.println("4 executou o construtor com argumento numero, agencia e saldo");
+		//System.out.println("4 executou o construtor com argumento numero, agencia e saldo");
 	}
 
 	public String getTipo() {
@@ -128,12 +128,11 @@ public abstract class Conta {
 		}
 	}
 	
-	public boolean saca(double valor) {
+	public void saca(double valor) {
 		if (valor <= this.getSaldo()) {
-			this.setSaldo(this.getSaldo() - valor);
-			return true;
+			this.setSaldo(this.getSaldo() - valor);	
 		} else {
-			return false;
+			 throw new SaldoInsuficienteException("Saldo Insuficiente, tente um valor menor");
 		}
 	}
 
