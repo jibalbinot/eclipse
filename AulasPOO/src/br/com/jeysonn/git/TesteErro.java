@@ -6,7 +6,7 @@ public class TesteErro {
 
 	public static void main(String[] args) {
 		System.out.println("inicio do main");
-		
+
 		try {
 			int i = 5571;
 			i = i / 0;
@@ -18,7 +18,7 @@ public class TesteErro {
 		try {
 			metodo1();
 		} catch (NullPointerException e) {
-			System.out.println("Erro de ponteiro nulo: " + e);
+			System.out.println("Estou no main Erro de ponteiro nulo: " + e);
 		} catch (FileNotFoundException e) {
 			System.out.println("Erro de arquivo inexistente: " + e);
 		}
@@ -27,12 +27,12 @@ public class TesteErro {
 
 	static void metodo1() throws FileNotFoundException {
 		System.out.println("inicio do metodo1");
-		new java.io.FileInputStream("arquivo.txt");
+		// new java.io.FileInputStream("arquivo.txt");//forçando um erro de arquivo não encontrado
 		metodo2();
 		System.out.println("fim do metodo1");
 	}
 
-	static void metodo2() {
+	static void metodo2() throws NullPointerException{
 		System.out.println("inicio do metodo2");
 		ContaCorrente cc = new ContaCorrente("45678-9");
 
@@ -40,8 +40,9 @@ public class TesteErro {
 			cc.deposita(i + 1000);
 			System.out.println(cc.getSaldo());
 			if (i == 5) {
-				cc = null;
+				cc = null;//forçando um erro de ponteiro nulo
 			}
+
 		}
 
 		System.out.println("fim do metodo2");

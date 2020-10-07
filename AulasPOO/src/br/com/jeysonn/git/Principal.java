@@ -49,7 +49,7 @@ public class Principal {
 			c1.saca(101);
 			System.out.println("Sacou com sucesso");
 		} catch (SaldoInsuficienteException e) {
-			System.out.println("Erro: " +e.getMessage());
+			System.out.println("Erro: " + e.getMessage());
 		}
 		System.out.println("Antes");
 		System.out.println(c1.recuperaDadosParaImpressao());
